@@ -1,4 +1,6 @@
-package domain;
+package domain.chess;
+
+import domain.pieces.Pawn;
 
 import java.util.ArrayList;
 import java.util.List;

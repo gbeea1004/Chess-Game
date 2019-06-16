@@ -1,6 +1,9 @@
-package domain;
+package domain.pieces;
 
 public class Pawn {
+    public static final String WHITE_COLOR = "white";
+    public static final String BLACK_COLOR = "black";
+
     private String color;
 
     public Pawn(String white) {
@@ -8,7 +11,7 @@ public class Pawn {
     }
 
     public Pawn() {
-        color = "white";
+        color = WHITE_COLOR;
     }
 
     public String getColor() {
