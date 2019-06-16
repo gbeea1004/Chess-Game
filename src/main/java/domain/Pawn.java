@@ -7,6 +7,10 @@ public class Pawn {
         color = white;
     }
 
+    public Pawn() {
+        color = "white";
+    }
+
     public String getColor() {
         return color;
     }
