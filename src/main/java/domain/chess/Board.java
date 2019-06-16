@@ -16,7 +16,7 @@ public class Board {
         return pawns.size();
     }
 
-    public String findPawn(int index) {
-        return pawns.get(index).getColor();
+    public Pawn findPawn(int index) {
+        return pawns.get(index);
     }
 }
