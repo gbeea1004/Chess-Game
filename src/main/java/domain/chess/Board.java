@@ -51,4 +51,29 @@ public class Board {
         }
         return sb.toString();
     }
+
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getBlankLine());
+        sb.append('\n');
+        sb.append(getBlackPawnsResult());
+        sb.append('\n');
+        sb.append(getBlankLine());
+        sb.append('\n');
+        sb.append(getBlankLine());
+        sb.append('\n');
+        sb.append(getBlankLine());
+        sb.append('\n');
+        sb.append(getBlankLine());
+        sb.append('\n');
+        sb.append(getWhitePawnsResult());
+        sb.append('\n');
+        sb.append(getBlankLine());
+        sb.append('\n');
+        return sb.toString();
+    }
+
+    private String getBlankLine() {
+        return "........";
+    }
 }
