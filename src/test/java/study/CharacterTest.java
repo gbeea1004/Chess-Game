@@ -1,4 +1,4 @@
-package domain.chess;
+package study;
 
 import org.junit.Test;
 
