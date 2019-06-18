@@ -19,4 +19,8 @@ public class Board {
     public Pawn findPawn(int index) {
         return pawns.get(index);
     }
+
+    public void initialize() {
+
+    }
 }
