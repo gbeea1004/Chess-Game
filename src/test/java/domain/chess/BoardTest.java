@@ -17,13 +17,20 @@ public class BoardTest {
     @Test
     public void create() {
         Pawn white = new Pawn(Pawn.WHITE_COLOR, Pawn.WHITE_PAWN);
-        board.add(white);
+        board.addWhitePawn(white);
         assertThat(board.size()).isEqualTo(1);
-        assertThat(board.findPawn(0)).isEqualTo(white);
+        assertThat(board.findWhitePawn(0)).isEqualTo(white);
 
         Pawn black = new Pawn(Pawn.BLACK_COLOR, Pawn.BLACK_PAWN);
-        board.add(black);
+        board.addBlackPawn(black);
         assertThat(board.size()).isEqualTo(2);
-        assertThat(board.findPawn(1)).isEqualTo(black);
+        assertThat(board.findBlackPawn(0)).isEqualTo(black);
+    }
+
+    @Test
+    public void initialize() {
+        board.initialize();
+        assertThat(board.getWhitePawnsResult()).isEqualTo("pppppppp");
+        assertThat(board.getBlackPawnsResult()).isEqualTo("PPPPPPPP");
     }
 }
