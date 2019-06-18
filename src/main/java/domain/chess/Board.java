@@ -69,7 +69,6 @@ public class Board {
         sb.append(getWhitePawnsResult());
         sb.append('\n');
         sb.append(getBlankLine());
-        sb.append('\n');
         return sb.toString();
     }
 
