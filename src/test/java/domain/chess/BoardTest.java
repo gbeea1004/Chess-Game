@@ -37,7 +37,7 @@ public class BoardTest {
     @Test
     public void print() {
         board.initialize();
-        assertThat(board.print()).isEqualTo(
+        assertThat(board.showBoard()).isEqualTo(
                 "........" + System.lineSeparator() +
                 "PPPPPPPP" + System.lineSeparator() +
                 "........" + System.lineSeparator() +

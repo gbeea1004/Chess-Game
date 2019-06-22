@@ -8,11 +8,14 @@ import java.util.List;
 import static utils.StringUtils.*;
 
 public class Board {
+    private static int pieceCount = 0;
+
     private List<Piece> whitePieces = new ArrayList<>();
     private List<Piece> blackPieces = new ArrayList<>();
 
-    public void addWhitePawn(Piece piece) {
-        whitePieces.add(piece);
+    public void addWhitePawn(Piece pawn) {
+        whitePieces.add(pawn);
+        pieceCount++;
     }
 
     public void addBlackPawn(Piece piece) {
@@ -54,7 +57,7 @@ public class Board {
         return sb.toString();
     }
 
-    public String print() {
+    public String showBoard() {
         StringBuilder sb = new StringBuilder();
         sb.append(appendNewLine(getBlankLine()));
         sb.append(appendNewLine(getBlackPawnsResult()));
