@@ -1,6 +1,6 @@
 package domain.chess;
 
-import domain.pieces.Pawn;
+import domain.pieces.Piece;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,12 +16,12 @@ public class BoardTest {
 
     @Test
     public void create() {
-        Pawn white = new Pawn(Pawn.WHITE_COLOR, Pawn.WHITE_PAWN);
+        Piece white = Piece.createWhitePawn();
         board.addWhitePawn(white);
         assertThat(board.size()).isEqualTo(1);
         assertThat(board.findWhitePawn(0)).isEqualTo(white);
 
-        Pawn black = new Pawn(Pawn.BLACK_COLOR, Pawn.BLACK_PAWN);
+        Piece black = Piece.createBlackPawn();
         board.addBlackPawn(black);
         assertThat(board.size()).isEqualTo(2);
         assertThat(board.findBlackPawn(0)).isEqualTo(black);

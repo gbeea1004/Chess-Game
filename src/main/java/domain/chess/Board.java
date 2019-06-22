@@ -1,7 +1,6 @@
 package domain.chess;
 
-import domain.pieces.Pawn;
-import utils.StringUtils;
+import domain.pieces.Piece;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,48 +8,48 @@ import java.util.List;
 import static utils.StringUtils.*;
 
 public class Board {
-    private List<Pawn> whitePawns = new ArrayList<>();
-    private List<Pawn> blackPawns = new ArrayList<>();
+    private List<Piece> whitePieces = new ArrayList<>();
+    private List<Piece> blackPieces = new ArrayList<>();
 
-    public void addWhitePawn(Pawn pawn) {
-        whitePawns.add(pawn);
+    public void addWhitePawn(Piece piece) {
+        whitePieces.add(piece);
     }
 
-    public void addBlackPawn(Pawn pawn) {
-        blackPawns.add(pawn);
+    public void addBlackPawn(Piece piece) {
+        blackPieces.add(piece);
     }
 
     public int size() {
-        return whitePawns.size() + blackPawns.size();
+        return whitePieces.size() + blackPieces.size();
     }
 
-    public Pawn findWhitePawn(int index) {
-        return whitePawns.get(index);
+    public Piece findWhitePawn(int index) {
+        return whitePieces.get(index);
     }
 
-    public Pawn findBlackPawn(int index) {
-        return blackPawns.get(index);
+    public Piece findBlackPawn(int index) {
+        return blackPieces.get(index);
     }
 
     public void initialize() {
         for (int i = 0; i < 8; i++) {
-            addWhitePawn(new Pawn(Pawn.WHITE_COLOR, Pawn.WHITE_PAWN));
-            addBlackPawn(new Pawn(Pawn.BLACK_COLOR, Pawn.BLACK_PAWN));
+            addWhitePawn(Piece.createWhitePawn());
+            addBlackPawn(Piece.createBlackPawn());
         }
     }
 
     public String getWhitePawnsResult() {
-        return getPawnsResult(whitePawns);
+        return getPawnsResult(whitePieces);
     }
 
     public String getBlackPawnsResult() {
-        return getPawnsResult(blackPawns);
+        return getPawnsResult(blackPieces);
     }
 
-    private String getPawnsResult(List<Pawn> pawns) {
+    private String getPawnsResult(List<Piece> pieces) {
         StringBuilder sb = new StringBuilder();
-        for (Pawn pawn : pawns) {
-            sb.append(pawn.getRepresentation());
+        for (Piece piece : pieces) {
+            sb.append(piece.getRepresentation());
         }
         return sb.toString();
     }
