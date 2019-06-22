@@ -1,9 +1,12 @@
 package domain.chess;
 
 import domain.pieces.Pawn;
+import utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static utils.StringUtils.*;
 
 public class Board {
     private List<Pawn> whitePawns = new ArrayList<>();
@@ -54,20 +57,13 @@ public class Board {
 
     public String print() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getBlankLine());
-        sb.append('\n');
-        sb.append(getBlackPawnsResult());
-        sb.append('\n');
-        sb.append(getBlankLine());
-        sb.append('\n');
-        sb.append(getBlankLine());
-        sb.append('\n');
-        sb.append(getBlankLine());
-        sb.append('\n');
-        sb.append(getBlankLine());
-        sb.append('\n');
-        sb.append(getWhitePawnsResult());
-        sb.append('\n');
+        sb.append(appendNewLine(getBlankLine()));
+        sb.append(appendNewLine(getBlackPawnsResult()));
+        sb.append(appendNewLine(getBlankLine()));
+        sb.append(appendNewLine(getBlankLine()));
+        sb.append(appendNewLine(getBlankLine()));
+        sb.append(appendNewLine(getBlankLine()));
+        sb.append(appendNewLine(getWhitePawnsResult()));
         sb.append(getBlankLine());
         return sb.toString();
     }

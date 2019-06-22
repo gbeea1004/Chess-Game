@@ -38,13 +38,13 @@ public class BoardTest {
     public void print() {
         board.initialize();
         assertThat(board.print()).isEqualTo(
-                "........\n" +
-                "PPPPPPPP\n" +
-                "........\n" +
-                "........\n" +
-                "........\n" +
-                "........\n" +
-                "pppppppp\n" +
+                "........" + System.lineSeparator() +
+                "PPPPPPPP" + System.lineSeparator() +
+                "........" + System.lineSeparator() +
+                "........" + System.lineSeparator() +
+                "........" + System.lineSeparator() +
+                "........" + System.lineSeparator() +
+                "pppppppp" + System.lineSeparator() +
                 "........");
     }
 }
