@@ -48,31 +48,31 @@ public class Board {
     }
 
     public void initialize() {
-        addWhitePiece(Piece.createWhiteRook());
-        addWhitePiece(Piece.createWhiteKnight());
-        addWhitePiece(Piece.createWhiteBishop());
-        addWhitePiece(Piece.createWhiteQueen());
-        addWhitePiece(Piece.createWhiteKing());
-        addWhitePiece(Piece.createWhiteBishop());
-        addWhitePiece(Piece.createWhiteKnight());
-        addWhitePiece(Piece.createWhiteRook());
+        addWhitePawn(Piece.createWhite(Piece.Type.ROOK));
+        addWhitePawn(Piece.createWhite(Piece.Type.KNIGHT));
+        addWhitePawn(Piece.createWhite(Piece.Type.BISHOP));
+        addWhitePawn(Piece.createWhite(Piece.Type.QUEEN));
+        addWhitePawn(Piece.createWhite(Piece.Type.KING));
+        addWhitePawn(Piece.createWhite(Piece.Type.BISHOP));
+        addWhitePawn(Piece.createWhite(Piece.Type.KNIGHT));
+        addWhitePawn(Piece.createWhite(Piece.Type.ROOK));
 
         for (int i = 0; i < 8; i++) {
-            addWhitePawn(Piece.createWhitePawn());
+            addWhitePawn(Piece.createWhite(Piece.Type.PAWN));
         }
 
         for (int i = 0; i < 8; i++) {
-            addBlackPawn(Piece.createBlackPawn());
+            addBlackPawn(Piece.createBlack(Piece.Type.PAWN));
         }
 
-        addBlackPiece(Piece.createBlackRook());
-        addBlackPiece(Piece.createBlackKnight());
-        addBlackPiece(Piece.createBlackBishop());
-        addBlackPiece(Piece.createBlackQueen());
-        addBlackPiece(Piece.createBlackKing());
-        addBlackPiece(Piece.createBlackBishop());
-        addBlackPiece(Piece.createBlackKnight());
-        addBlackPiece(Piece.createBlackRook());
+        addWhitePawn(Piece.createBlack(Piece.Type.ROOK));
+        addWhitePawn(Piece.createBlack(Piece.Type.KNIGHT));
+        addWhitePawn(Piece.createBlack(Piece.Type.BISHOP));
+        addWhitePawn(Piece.createBlack(Piece.Type.QUEEN));
+        addWhitePawn(Piece.createBlack(Piece.Type.KING));
+        addWhitePawn(Piece.createBlack(Piece.Type.BISHOP));
+        addWhitePawn(Piece.createBlack(Piece.Type.KNIGHT));
+        addWhitePawn(Piece.createBlack(Piece.Type.ROOK));
     }
 
     public String getWhitePiecesResult() {

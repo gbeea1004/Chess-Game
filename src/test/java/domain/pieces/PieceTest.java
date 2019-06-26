@@ -8,14 +8,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PieceTest {
     @Test
     public void create_piece() {
-        verifyPiece(Piece.createWhitePawn(), Piece.createBlackPawn(), Type.PAWN);
-        verifyPiece(Piece.createWhiteRook(), Piece.createBlackRook(), Type.ROOK);
-        verifyPiece(Piece.createWhiteKnight(), Piece.createBlackKnight(), Type.KNIGHT);
-        verifyPiece(Piece.createWhiteBishop(), Piece.createBlackBishop(), Type.BISHOP);
-        verifyPiece(Piece.createWhiteQueen(), Piece.createBlackQueen(), Type.QUEEN);
-        verifyPiece(Piece.createWhiteKing(), Piece.createBlackKing(), Type.KING);
+        verifyPiece(createWhite(Type.PAWN), createBlack(Type.PAWN), Type.PAWN);
+        verifyPiece(createWhite(Type.ROOK), createBlack(Type.ROOK), Type.ROOK);
+        verifyPiece(createWhite(Type.KNIGHT), createBlack(Type.KNIGHT), Type.KNIGHT);
+        verifyPiece(createWhite(Type.BISHOP), createBlack(Type.BISHOP), Type.BISHOP);
+        verifyPiece(createWhite(Type.QUEEN), createBlack(Type.QUEEN), Type.QUEEN);
+        verifyPiece(createWhite(Type.KING), createBlack(Type.KING), Type.KING);
 
-        Piece blank = Piece.createBlank();
+        Piece blank = createBlank();
         assertThat(blank.isWhite()).isFalse();
         assertThat(blank.isBlack()).isFalse();
     }
@@ -30,11 +30,8 @@ public class PieceTest {
 
     @Test
     public void isWhiteAndBlack() {
-        assertThat(createWhiteKing().isWhite()).isTrue();
-        assertThat(createWhiteKing().isBlack()).isFalse();
-
-        assertThat(createBlackBishop().isBlack()).isTrue();
-        assertThat(createBlackBishop().isWhite()).isFalse();
+        assertThat(createWhite(Type.KING).isWhite()).isTrue();
+        assertThat(createBlack(Type.KING).isBlack()).isTrue();
     }
 
     @Test
