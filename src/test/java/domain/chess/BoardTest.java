@@ -1,5 +1,6 @@
 package domain.chess;
 
+import domain.pieces.Piece;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,5 +32,26 @@ public class BoardTest {
     public void print() {
         board.initialize();
         System.out.println(board.showBoard());
+    }
+
+    @Test
+    public void countOfPiece() {
+        board.initialize();
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.ROOK))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.KNIGHT))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.BISHOP))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.KING))).isEqualTo(1);
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.QUEEN))).isEqualTo(1);
+        assertThat(board.countOfPiece(Piece.createWhite(Piece.Type.PAWN))).isEqualTo(8);
+
+        assertThat(board.countOfPiece(Piece.createBlank())).isEqualTo(32);
+
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.PAWN))).isEqualTo(8);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.ROOK))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.KNIGHT))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.BISHOP))).isEqualTo(2);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.KING))).isEqualTo(1);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.QUEEN))).isEqualTo(1);
+        assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.PAWN))).isEqualTo(8);
     }
 }

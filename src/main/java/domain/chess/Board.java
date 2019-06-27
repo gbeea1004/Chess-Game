@@ -38,4 +38,15 @@ public class Board {
         }
         return appendNewLine(sb.toString());
     }
+
+    public int countOfPiece(Piece piece) {
+        int count = 0;
+        for (Rank rank : ranks) {
+            count += rank.getPieces().stream()
+                    .filter(t -> t.getColor().equals(piece.getColor()))
+                    .filter(t -> t.getRepresentation() == piece.getRepresentation())
+                    .count();
+        }
+        return count;
+    }
 }
