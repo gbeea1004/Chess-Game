@@ -24,8 +24,9 @@ public class Board {
 
     public String showBoard() {
         StringBuilder sb = new StringBuilder();
-        for (Rank rank : ranks) {
-            sb.append(showRank(rank));
+        ListIterator<Rank> ranksIter = ranks.listIterator(ranks.size());
+        while (ranksIter.hasPrevious()) {
+            sb.append(showRank(ranksIter.previous()));
         }
         return sb.toString();
     }

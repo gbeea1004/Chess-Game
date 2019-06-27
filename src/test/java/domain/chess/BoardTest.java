@@ -19,11 +19,11 @@ public class BoardTest {
         board.initialize();
         String blank = appendNewLine("........");
         assertThat(board.showBoard()).isEqualTo(
-                appendNewLine("rnbqkbnr") +
-                appendNewLine("pppppppp") +
-                blank + blank + blank + blank +
+                appendNewLine("RNBQKBNR") +
                 appendNewLine("PPPPPPPP") +
-                appendNewLine("RNBQKBNR")
+                blank + blank + blank + blank +
+                appendNewLine("pppppppp") +
+                appendNewLine("rnbqkbnr")
         );
     }
 
