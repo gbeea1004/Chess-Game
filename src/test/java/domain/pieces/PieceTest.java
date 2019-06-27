@@ -22,10 +22,10 @@ public class PieceTest {
 
     private void verifyPiece(final Piece whitePiece, final Piece blackPiece, final Type type) {
         assertThat(whitePiece.isWhite()).isTrue();
-        assertThat(whitePiece.getRepresentation()).isEqualTo(type);
+        assertThat(whitePiece.getRepresentation()).isEqualTo(type.getWhiteRepresentation());
 
         assertThat(blackPiece.isBlack()).isTrue();
-        assertThat(blackPiece.getRepresentation()).isEqualTo(type);
+        assertThat(blackPiece.getRepresentation()).isEqualTo(type.getBlackRepresentation());
     }
 
     @Test

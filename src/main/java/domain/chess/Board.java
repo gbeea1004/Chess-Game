@@ -4,44 +4,37 @@ import domain.pieces.Piece;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import static utils.StringUtils.appendNewLine;
 
 public class Board {
-    private static int pieceCount = 0;
-    private List<Rank> pieces = new ArrayList<>();
-
-    public int pieceCount() {
-        return pieceCount;
-    }
+    private List<Rank> ranks = new ArrayList<>();
 
     public void initialize() {
-        pieces.add(Rank.initializeWhitePieces());
-        pieces.add(Rank.initializeWhitePawns());
-        pieces.add(Rank.initializeBlankLine());
-        pieces.add(Rank.initializeBlankLine());
-        pieces.add(Rank.initializeBlankLine());
-        pieces.add(Rank.initializeBlankLine());
-        pieces.add(Rank.initializeBlackPawns());
-        pieces.add(Rank.initializeBlackPieces());
+        ranks.add(Rank.initializeWhitePieces());
+        ranks.add(Rank.initializeWhitePawns());
+        ranks.add(Rank.initializeBlankLine());
+        ranks.add(Rank.initializeBlankLine());
+        ranks.add(Rank.initializeBlankLine());
+        ranks.add(Rank.initializeBlankLine());
+        ranks.add(Rank.initializeBlackPawns());
+        ranks.add(Rank.initializeBlackPieces());
     }
 
-    private String getPieceResult(List<Piece> pieces) {
+    public String showBoard() {
         StringBuilder sb = new StringBuilder();
-        for (Piece piece : pieces) {
-            sb.append(piece.getRepresentation());
+        for (Rank rank : ranks) {
+            sb.append(showRank(rank));
         }
         return sb.toString();
     }
 
-    public String showBoard() {
-        String blankLine = appendNewLine("........");
+    public String showRank(Rank rank) {
         StringBuilder sb = new StringBuilder();
-        
-        return sb.toString();
-    }
-
-    private String getBlankLine() {
-        return "........";
+        for (Piece piece : rank.getPieces()) {
+            sb.append(piece.getRepresentation());
+        }
+        return appendNewLine(sb.toString());
     }
 }

@@ -69,4 +69,8 @@ public class Rank {
     public Piece findPiece(int index) {
         return pieces.get(index);
     }
+
+    public List<Piece> getPieces() {
+        return pieces;
+    }
 }

@@ -2,7 +2,7 @@ package domain.pieces;
 
 public class Piece {
     private Color color;
-    private Type representation;
+    private Type type;
 
     public enum Color {
         WHITE, BLACK, NO_COLOR
@@ -34,7 +34,7 @@ public class Piece {
 
     private Piece(Color color, Type representation) {
         this.color = color;
-        this.representation = representation;
+        this.type = representation;
     }
 
     public static Piece createWhite(Type type) {
@@ -61,7 +61,7 @@ public class Piece {
         return color;
     }
 
-    public Type getRepresentation() {
-        return representation;
+    public char getRepresentation() {
+        return isWhite() ? type.getWhiteRepresentation() : type.getBlackRepresentation();
     }
 }

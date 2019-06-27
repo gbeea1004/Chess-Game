@@ -17,14 +17,13 @@ public class BoardTest {
     @Test
     public void create() {
         board.initialize();
-        assertThat(board.pieceCount()).isEqualTo(32);
         String blank = appendNewLine("........");
         assertThat(board.showBoard()).isEqualTo(
-                appendNewLine("RNBQKBNR") +
-                appendNewLine("PPPPPPPP") +
-                blank + blank + blank + blank +
+                appendNewLine("rnbqkbnr") +
                 appendNewLine("pppppppp") +
-                appendNewLine("rnbqkbnr")
+                blank + blank + blank + blank +
+                appendNewLine("PPPPPPPP") +
+                appendNewLine("RNBQKBNR")
         );
     }
 
