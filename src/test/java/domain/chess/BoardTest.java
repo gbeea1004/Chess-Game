@@ -54,4 +54,14 @@ public class BoardTest {
         assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.QUEEN))).isEqualTo(1);
         assertThat(board.countOfPiece(Piece.createBlack(Piece.Type.PAWN))).isEqualTo(8);
     }
+
+    @Test
+    public void findPiece() {
+        board.initialize();
+
+        assertThat(board.findPiece("a8")).isEqualTo(Piece.createBlack(Piece.Type.ROOK));
+        assertThat(board.findPiece("h8")).isEqualTo(Piece.createBlack(Piece.Type.ROOK));
+        assertThat(board.findPiece("a1")).isEqualTo(Piece.createWhite(Piece.Type.ROOK));
+        assertThat(board.findPiece("h1")).isEqualTo(Piece.createWhite(Piece.Type.ROOK));
+    }
 }

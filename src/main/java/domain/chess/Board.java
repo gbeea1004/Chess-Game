@@ -49,4 +49,10 @@ public class Board {
         }
         return count;
     }
+
+    public Piece findPiece(String piece) {
+        int xPos = piece.charAt(0) - 'a';
+        int y = piece.charAt(1) - '0';
+        return ranks.get(y - 1).getPieces().get(xPos);
+    }
 }

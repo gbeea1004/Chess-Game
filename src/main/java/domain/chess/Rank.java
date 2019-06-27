@@ -16,7 +16,7 @@ public class Rank {
         pieces.add(piece);
     }
 
-    public static Rank initializeWhitePieces() {
+    static Rank initializeWhitePieces() {
         Rank rank = new Rank();
         rank.addPiece(Piece.createWhite(Piece.Type.ROOK));
         rank.addPiece(Piece.createWhite(Piece.Type.KNIGHT));
@@ -29,7 +29,7 @@ public class Rank {
         return rank;
     }
 
-    public static Rank initializeBlackPieces() {
+    static Rank initializeBlackPieces() {
         Rank rank = new Rank();
         rank.addPiece(Piece.createBlack(Piece.Type.ROOK));
         rank.addPiece(Piece.createBlack(Piece.Type.KNIGHT));
@@ -42,7 +42,7 @@ public class Rank {
         return rank;
     }
 
-    public static Rank initializeWhitePawns() {
+    static Rank initializeWhitePawns() {
         Rank rank = new Rank();
         for (int i = 0; i < SIZE; i++) {
             rank.addPiece(Piece.createWhite(Piece.Type.PAWN));
@@ -50,7 +50,7 @@ public class Rank {
         return rank;
     }
 
-    public static Rank initializeBlackPawns() {
+    static Rank initializeBlackPawns() {
         Rank rank = new Rank();
         for (int i = 0; i < SIZE; i++) {
             rank.addPiece(Piece.createBlack(Piece.Type.PAWN));
@@ -58,7 +58,7 @@ public class Rank {
         return rank;
     }
 
-    public static Rank initializeBlankLine() {
+    static Rank initializeBlankLine() {
         Rank rank = new Rank();
         for (int i = 0; i < SIZE; i++) {
             rank.addPiece(Piece.createBlank());
