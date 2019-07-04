@@ -73,4 +73,8 @@ public class Rank {
     public List<Piece> getPieces() {
         return pieces;
     }
+
+    public Piece getXPos(int xPos) {
+        return pieces.get(xPos);
+    }
 }
