@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Rank {
     private static final int SIZE = 8;
-    private List<Piece> pieces = new ArrayList<>();
+    private List<Piece> pieces = new ArrayList<>(8);
 
     static Rank initializeWhitePieces() {
         Rank rank = new Rank();
@@ -65,9 +65,5 @@ public class Rank {
 
     public List<Piece> getPieces() {
         return pieces;
-    }
-
-    public Piece getXPos(int xPos) {
-        return pieces.get(xPos);
     }
 }

@@ -7,14 +7,10 @@ import java.util.Scanner;
 public class ChessGameApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            if (InputView.isGameStart(scanner)) {
-                Board board = new Board();
-                board.initialize();
-                ResultView.showBoard(board);
-            } else {
-                break;
-            }
+        while (InputView.isGameStart(scanner)) {
+            Board board = new Board();
+            board.initialize();
+            ResultView.showBoard(board);
         }
         scanner.close();
     }

@@ -22,6 +22,12 @@ public class Board {
         ranks.add(Rank.initializeBlackPieces());
     }
 
+    public void initializeEmpty() {
+        for (int i = 0; i < 8; i++) {
+            ranks.add(Rank.initializeBlankLine());
+        }
+    }
+
     public String showBoard() {
         StringBuilder sb = new StringBuilder();
         ListIterator<Rank> ranksIter = ranks.listIterator(ranks.size());
@@ -51,6 +57,6 @@ public class Board {
     }
 
     public Piece findPiece(String piece) {
-        return ranks.get(piece.charAt(1) - '0' - 1).getXPos(piece.charAt(0) - 'a');
+        return ranks.get(piece.charAt(1) - '0' - 1).findPiece(piece.charAt(0) - 'a');
     }
 }
